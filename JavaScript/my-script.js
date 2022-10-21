@@ -18,31 +18,40 @@ Attenzione se utilizzate il tag form, i button all'interno devono avere il type=
 
 const triggerBtn = document.querySelector('#btn-trigger');
 const hide = document.querySelector('#hide');
-const show = document.querySelector('.output-container');
+const show = document.querySelector('.ticket');
+
+// Aggiungiamo tutti gli eventi al click del bottone
 triggerBtn.addEventListener('click', function() {
     const passenger = document.getElementById('passenger').value;
     const myDistance = document.getElementById('km').value;
+    if (isNaN(myDistance)) {
+        alert(`Attenzione! Inserire un numero corretto. La pagina verra riavviata!`);
+        window.location.reload();
+    }
     const age = document.getElementById('age').value;
     let trainPrice = myDistance * 0.21;
-    const youngCard = 'Carta Giovani';
-    const seniorCard = 'Carta Over 65';
-    //Mostiamo il Container dell'output
+    const youngCard = 'Biglietto Young';
+    const seniorCard = 'Biglietto Senior';
+    // Mostiamo il Container dell'output
     show.classList.add("block");
     // Imposto le condizioni di sconto
     if (age === 'Minorenne') {
+        document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
         trainPrice -= trainPrice * 0.2;
         document.querySelector('#card-type').innerHTML = youngCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
     } else if (age === 'Senior') {
+        document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
         trainPrice -= trainPrice * 0.4;
         document.querySelector('#card-type').innerHTML = seniorCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
     } else {
-        document.querySelector('#card-type').innerHTML = `Carta Standard`;
+        document.querySelector('#total-price').innerHTML = ``;
+        document.querySelector('#card-type').innerHTML = `Biglietto Standard`;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
     }
     console.log(passenger + ' ' + trainPrice.toFixed(2) + '€ ' + age);
-    //Inseriamo i dettagli nelle giuste posizioni:
+    // Inseriamo i dettagli nelle giuste posizioni:
     document.querySelector('#passenger-name').innerHTML = passenger;
     document.querySelector('#cabin').innerHTML = Math.floor(Math.random() * 10 + 1);
     document.querySelector('#code').innerHTML = Math.floor(Math.random() * 10000 + 90000);

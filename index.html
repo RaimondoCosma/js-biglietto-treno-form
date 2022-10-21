@@ -14,47 +14,50 @@
             <div class="form-container row">
                 <div class="col-passenger">
                     <label for="passenger">Nome Cognome</label>
-                    <div class="input"><input id="passenger" type="text"></div>
+                    <div class="input"><input id="passenger" name="passenger" placeholder="nome e cognome" type="text"></div>
                 </div>
                 <div class="col-distance">
                     <label for="km">Km da percorrere</label>
-                    <div class="input"><input id="km" type="number"></div>
+                    <div class="input"><input id="km" name="km" placeholder="Inserisci km" type="number"></div>
                 </div>
                 <div class="col-age">
                     <label for="age">Fascia d'età</label>
                     <div class="input"><select name="fascia-età" id="age">
                         <option value="Minorenne">Minorenne</option>
                         <option value="Maggiorenne">Maggiorenne</option>
-                        <option value="Senior">Senior</option>
+                        <option value="Senior">Over 65</option>
                     </select></div>
                 </div>
             </div>
             <button id="btn-trigger" type="button">Genera</button>
             <button id="hide" type="reset">Annulla</button>
         </form>
-        <h2>IL TUO BIGLIETTO</h2>
-        <div class="output-container">
-            <h4>DETTAGLIO PASSEGGERI</h4>
-            <div class="output row">
-                <div class="col-passenger-details">
-                    <h5>NOME PASSEGGERO</h5>
-                    <span id="passenger-name">Jhon Snow</span>
-                </div>
-                <div class="col-sale">
-                    <div class="resume">Offerta</div>
-                    <span id="card-type">Tipo Biglietto</span>
-                </div>
-                <div class="col-cabin">
-                    <div class="resume">Carrozza</div>
-                    <span id="cabin">n carrozza</span>
-                </div>
-                <div class="col-code">
-                    <div class="resume">Codice CP</div>
-                    <span id="code">random</span>
-                </div>
-                <div class="col-price">
-                    <div class="resume">Costo biglietto</div>
-                    <span id="price">prezzo</span>
+        <div class="ticket">
+            <h2>IL TUO BIGLIETTO</h2>
+            <div class="output-container">
+                <h3>DETTAGLIO PASSEGGERI</h3>
+                <div class="output row">
+                    <div class="col col-passenger-details">
+                        <h4>NOME PASSEGGERO</h4>
+                        <span id="passenger-name">Jhon Snow</span>
+                    </div>
+                    <div class="col col-sale">
+                        <div class="resume">Offerta</div>
+                        <span id="card-type">Tipo Biglietto</span>
+                    </div>
+                    <div class="col col-cabin">
+                        <div class="resume">Carrozza</div>
+                        <span id="cabin">n carrozza</span>
+                    </div>
+                    <div class="col col-code">
+                        <div class="resume">Codice CP</div>
+                        <span id="code">random</span>
+                    </div>
+                    <div class="col col-price">
+                        <div class="resume">Costo biglietto</div>
+                        <small id="total-price"></small>
+                        <span id="price">prezzo</span>
+                    </div>
                 </div>
             </div>
         </div>
