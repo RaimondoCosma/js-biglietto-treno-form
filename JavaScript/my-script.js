@@ -17,6 +17,8 @@ Attenzione se utilizzate il tag form, i button all'interno devono avere il type=
 */
 
 const triggerBtn = document.querySelector('#btn-trigger');
+const hide = document.querySelector('#hide');
+const show = document.querySelector('.output-container');
 triggerBtn.addEventListener('click', function() {
     const passenger = document.getElementById('passenger').value;
     const myDistance = document.getElementById('km').value;
@@ -24,6 +26,8 @@ triggerBtn.addEventListener('click', function() {
     let trainPrice = myDistance * 0.21;
     const youngCard = 'Carta Giovani';
     const seniorCard = 'Carta Over 65';
+    //Mostiamo il Container dell'output
+    show.classList.add("block");
     // Imposto le condizioni di sconto
     if (age === 'Minorenne') {
         trainPrice -= trainPrice * 0.2;
@@ -45,29 +49,7 @@ triggerBtn.addEventListener('click', function() {
     document.getElementById('prova').innerHTML = passenger+trainPrice.toFixed(2)+'€'+age;
 })
 
-
-// 3. Imposto il prezzo del biglietto
-// console.log(`Il prezzo totale del biglietto è di: ${trainPrice.toFixed(2)}€`);
-// document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
-
-// 4. Imposto le variabili di sconto
-// const youngCardPrice = trainPrice * 0.2;
-// const seniorCardPrice = trainPrice * 0.4;
-
-// 5. Imposto le condizioni per attuare lo sconto
-// if (age < 18) {
-//     trainPrice = trainPrice - youngCardPrice;
-//     console.log(`Ha diritto ad uno sconto del 20% come possessore della Carta Young: Prezzo = ${trainPrice.toFixed(2)}€`)
-//     document.querySelector('#discount-price').innerHTML = `<span style="color: green;">Scontato: ${trainPrice.toFixed(2)}€</span>`;
-//     document.querySelector('#total-price').style.textDecoration = "line-through";
-//     document.querySelector('#card-type').innerHTML = `<span style="color: red;">Come possessore della Carta Young ha diritto ad uno sconto del 20% sul totale</span>`;
-// } else if (age >= 65){
-//     trainPrice = trainPrice - seniorCardPrice;
-//     console.log(`Ha diritto ad uno sconto del 20% come possessore della Carta Senior: Prezzo = ${trainPrice.toFixed(2)}€`)
-//     document.querySelector('#discount-price').innerHTML = `<span style="color: green;">Scontato: ${trainPrice.toFixed(2)}€</span>`;
-//     document.querySelector('#total-price').style.textDecoration = "line-through";
-//     document.querySelector('#card-type').innerHTML = `<span style="color: red;">Come possessore della Carta Senior ha diritto ad uno sconto del 40% sul totale</span>`;
-// } else {
-//     console.log(`Non abbiamo piani di sconto per la sua fascia di età: Prezzo = ${trainPrice.toFixed(2)}€`)
-//     document.querySelector('#card-type').innerHTML = `<span style="color: red;">Il nostro piano tariffario non prevede sconti per la sua fascia d'età</span>`;
-// }
+hide.addEventListener('click', function() {
+    //Nascondiamo il biglietto al reset
+    show.classList.remove("block");
+});

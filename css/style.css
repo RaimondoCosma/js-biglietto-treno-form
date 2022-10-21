@@ -41,6 +41,10 @@ h2 {
 h4 {
     text-align: left;
 }
+
+/* -------------------
+    FORM
+------------------- */
 .my-form {
     background-color: white;
     color: #b91450;
@@ -48,7 +52,6 @@ h4 {
     border-radius: .625rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
 .col-passenger, .col-distance, .col-age {
     padding: 1.875rem 0 3.125rem;
 }
@@ -61,22 +64,27 @@ h4 {
     border: 1px solid currentColor;
     border-radius: 4px;
  }
- 
  .my-form button {
     color: inherit;
     font-weight: bold;
     padding: .3125rem;
     margin: 0 .625rem 1.25rem;
  }
-
 #btn-trigger {
     border: 2px solid #e08f47;
     border-radius: .25rem;
 }
 
+/* -------------------
+    OUTPUT
+------------------- */
 .output-container {
     padding: 1.25rem;
     background-color: white;
+    display: none;
+}
+.block {
+    display: block;
 }
 .output {
     border-top: 1px solid #808080;
