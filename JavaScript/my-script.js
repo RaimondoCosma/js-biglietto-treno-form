@@ -22,14 +22,26 @@ triggerBtn.addEventListener('click', function() {
     const myDistance = document.getElementById('km').value;
     const age = document.getElementById('age').value;
     let trainPrice = myDistance * 0.21;
+    const youngCard = 'Carta Giovani';
+    const seniorCard = 'Carta Over 65';
     // Imposto le condizioni di sconto
     if (age === 'Minorenne') {
         trainPrice -= trainPrice * 0.2;
+        document.querySelector('#card-type').innerHTML = youngCard;
+        document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
     } else if (age === 'Senior') {
         trainPrice -= trainPrice * 0.4;
+        document.querySelector('#card-type').innerHTML = seniorCard;
+        document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
+    } else {
+        document.querySelector('#card-type').innerHTML = `Carta Standard`;
+        document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
     }
     console.log(passenger + ' ' + trainPrice.toFixed(2) + '€ ' + age);
-
+    //Inseriamo i dettagli nelle giuste posizioni:
+    document.querySelector('#passenger-name').innerHTML = passenger;
+    document.querySelector('#cabin').innerHTML = Math.floor(Math.random() * 10 + 1);
+    document.querySelector('#code').innerHTML = Math.floor(Math.random() * 10000 + 90000);
     document.getElementById('prova').innerHTML = passenger+trainPrice.toFixed(2)+'€'+age;
 })
 

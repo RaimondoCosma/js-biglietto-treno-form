@@ -21,6 +21,7 @@ body {
 
 .container {
     max-width: 62.5rem;
+    width: 100%;
     margin: auto;
     padding: 1.25rem 5.625rem 3.125rem;
     background-color: #b91450;
@@ -73,3 +74,27 @@ h4 {
     border-radius: .25rem;
 }
 
+.output-container {
+    padding: 1.25rem;
+    background-color: white;
+}
+.output {
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    padding: 1.5625rem 1.25rem;
+}
+.col-passenger-details {
+    width: 30%;
+    background-color: #808080;
+}
+.col-sale, .col-price {
+    width: 20%;
+}
+.col-cabin, .col-code {
+    width: 15%;
+}
+.resume {
+    padding-bottom: 1.875rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
