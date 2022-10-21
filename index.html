@@ -10,11 +10,18 @@
 <body>
     <section class="container">
         <form action="">
+            <label for="passenger">Nome Cognome</label>
+            <input id="passenger" type="text">
             <label for="km">Km da percorrere</label>
             <input id="km" type="number">
             <label for="age">Fascia d'età</label>
-            <input id="age" type="number" value="age">
+            <select name="fascia-età" id="age">
+                <option value="Minorenne">Minorenne</option>
+                <option value="Maggiorenne">Maggiorenne</option>
+                <option value="Senior">Senior</option>
+            </select>
             <button id="btn-trigger" type="button">Genera</button>
+            <button type="reset">Annulla</button>
         </form>
         <div>
             <p id="prova">...</p>
