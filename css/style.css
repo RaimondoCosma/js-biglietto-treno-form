@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+.container {
+    max-width: 56.25rem;
+    width: 100%;
+    margin: auto;
+}
+
+#ticket {
+    width: 100%;
+    background-color: lightgray;
+    border-radius: 2.5rem;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid black;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.col {
+    padding: 1.875rem 1.25rem;
+}
+.details {
+   font-size: 1.875rem;
+   margin-bottom: 1.875rem;
+}
+
+.price {
+    font-size: 1.875rem;
+    margin-bottom: 1.875rem;
+}
+
+#card-type {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1.875rem 1.25rem;
+}
