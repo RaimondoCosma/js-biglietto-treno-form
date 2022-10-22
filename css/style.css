@@ -94,6 +94,9 @@ input[type=number] {
     padding: .3125rem;
     margin: 0 .625rem 1.25rem;
  }
+ .my-form button:active {
+    font-size: .75rem;
+ }
 #btn-trigger {
     border: 2px solid #e08f47;
     border-radius: .25rem;

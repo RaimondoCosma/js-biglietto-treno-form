@@ -72,7 +72,7 @@ triggerBtn.addEventListener('click', function() {
         document.querySelector('#card-type').innerHTML = youngCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
         console.log(`Tipo di offerta: ${youngCard}`)
-    } else if (age === 'Senior') {
+    } else if (age === 'Over 65') {
         document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
         trainPrice -= trainPrice * 0.4;
         document.querySelector('#card-type').innerHTML = seniorCard;
