@@ -50,12 +50,13 @@ triggerBtn.addEventListener('click', function() {
         document.querySelector('#card-type').innerHTML = `Biglietto Standard`;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
     }
-    console.log(passenger + ' ' + trainPrice.toFixed(2) + '€ ' + age);
+    console.log(`Nome e Cognome passeggero: ${passenger}
+    Prezzo del biglietto: ${trainPrice.toFixed(2)}€
+    Fascia d'età passeggero: ${age}`);
     // Inseriamo i dettagli nelle giuste posizioni:
     document.querySelector('#passenger-name').innerHTML = passenger;
     document.querySelector('#cabin').innerHTML = Math.floor(Math.random() * 10 + 1);
     document.querySelector('#code').innerHTML = Math.floor(Math.random() * 10000 + 90000);
-    document.getElementById('prova').innerHTML = passenger+trainPrice.toFixed(2)+'€'+age;
 })
 
 hide.addEventListener('click', function() {
