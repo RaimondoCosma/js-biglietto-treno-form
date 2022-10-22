@@ -16,11 +16,12 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 Attenzione se utilizzate il tag form, i button all'interno devono avere il type="button"
 */
 
+// Imposto le variabili indipendenti dall'evento del click
 const triggerBtn = document.querySelector('#btn-trigger');
-const hide = document.querySelector('#hide');
 const show = document.querySelector('.ticket');
+const hide = document.querySelector('#hide');
 
-// Aggiungiamo tutti gli eventi al click del bottone
+// Aggiungo tutti gli eventi al click del bottone
 triggerBtn.addEventListener('click', function() {
     const passenger = document.getElementById('passenger').value;
     const myDistance = document.getElementById('km').value;
@@ -32,7 +33,7 @@ triggerBtn.addEventListener('click', function() {
     let trainPrice = myDistance * 0.21;
     const youngCard = 'Biglietto Young';
     const seniorCard = 'Biglietto Senior';
-    // Mostiamo il Container dell'output
+    // Mostro il Container dell'output
     show.classList.add("block");
     // Imposto le condizioni di sconto
     if (age === 'Minorenne') {
@@ -53,13 +54,14 @@ triggerBtn.addEventListener('click', function() {
     console.log(`Nome e Cognome passeggero: ${passenger}
     Prezzo del biglietto: ${trainPrice.toFixed(2)}€
     Fascia d'età passeggero: ${age}`);
-    // Inseriamo i dettagli nelle giuste posizioni:
+    // Inserisco i dettagli nelle giuste posizioni:
     document.querySelector('#passenger-name').innerHTML = passenger;
     document.querySelector('#cabin').innerHTML = Math.floor(Math.random() * 10 + 1);
     document.querySelector('#code').innerHTML = Math.floor(Math.random() * 10000 + 90000);
 })
 
+// Aggiunge evento di reset al click del bottone Annulla
 hide.addEventListener('click', function() {
-    //Nascondiamo il biglietto al reset
+    // Nascondiamo il biglietto al click
     show.classList.remove("block");
 });
