@@ -39,13 +39,16 @@ h2 {
 h3 {
     text-align: left;
 }
+
+/* Questa parte toglie le frecce sull'input numerico */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
 }
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-}
+    -moz-appearance:textfield; /*Firefox*/
+} 
+/* Questa parte toglie le frecce sull'input numerico */
 
 /* -------------------
     FORM
@@ -70,7 +73,10 @@ input[type=number] {
     background-color: inherit;
     border: 1px solid #b91450;
     border-radius: 4px;
-    padding: .3125rem 0;
+    padding: .3125rem .1875rem;
+ }
+ .c-pointer {
+    cursor: pointer;
  }
  .warning-name, .warning-km {
     opacity: 0;
