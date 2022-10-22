@@ -26,6 +26,7 @@ body {
     background-color: #b91450;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
 }
 .row {
     display: flex;
@@ -86,7 +87,10 @@ input[type=number] {
     OUTPUT
 ------------------- */
 .ticket {
-    display: none;
+    position: relative;
+    right: -111%;
+    z-index: 0;
+    transition: right 0.7s cubic-bezier(.18,.89,.32,1.28);
 }
 .output-container {
     text-align: left;
@@ -94,7 +98,7 @@ input[type=number] {
     background-color: white;
 }
 .block {
-    display: block;
+    right: 0;
 }
 .output {
     border-top: 1px solid #808080;
