@@ -20,21 +20,42 @@ Attenzione se utilizzate il tag form, i button all'interno devono avere il type=
 const triggerBtn = document.querySelector('#btn-trigger');
 const show = document.querySelector('.ticket');
 const hide = document.querySelector('#hide');
+const warning = document.querySelector('.warning-name');
+const warningKm = document.querySelector('.warning-km');
 
 // Aggiungo tutti gli eventi al click del bottone
 triggerBtn.addEventListener('click', function() {
+    // Script relativo al nome passeggero
     const passenger = document.getElementById('passenger').value;
-    const passengerInput = document.querySelector('.input');
+    const passengerName = document.getElementById('input-name');
+    // Imposto le condizioni di input
     if (!(isNaN(passenger)) || (passenger === "")) {
-        passengerInput.classList.toggle("shake");
-        alert("Inserisci nome e cognome");
+        passengerName.classList.add("shake");
+        setTimeout(function() {
+            // Rimuovo la classe dopo 400 millisecondi
+            passengerName.classList.remove("shake");
+        }, 400);
+        warning.classList.add("warning-name-show");
         return triggerBtn;
+    } else {
+        warning.classList.remove("warning-name-show");
     };
+    // Script relativo ai Km passeggero
     const myDistance = document.getElementById('km').value;
+    const passengerKm = document.getElementById('input-km');
+    // Imposto le condizioni di input
     if ((isNaN(myDistance)) || (myDistance <= 0 || myDistance > 10000)) {
-        alert("Attenzione inserire un numero compreso tra 1 e 10000!");
+        passengerKm.classList.add("shake");
+        setTimeout(function() {
+            // Rimuovo la classe dopo 400 millisecondi
+            passengerKm.classList.remove("shake");
+          }, 400);
+        warningKm.classList.add("warning-km-show");
         return triggerBtn;
+    } else {
+        warningKm.classList.remove("warning-km-show");
     };
+    // Script relativo alle variabili età, prezzo, offerta, cabina e cp code
     const age = document.getElementById('age').value;
     let trainPrice = myDistance * 0.21;
     const youngCard = 'Biglietto Young';
@@ -76,8 +97,11 @@ triggerBtn.addEventListener('click', function() {
     document.querySelector('#code').innerHTML = cpCode;
 })
 
-// Aggiunge evento di reset al click del bottone Annulla
+// Aggiungo evento di reset al click sul bottone Annulla
 hide.addEventListener('click', function() {
-    // Nascondiamo il biglietto al click
+    // Nascondo il biglietto al click
     show.classList.remove("block");
+    // Rimuovo eventuali warning
+    warning.classList.remove("warning-name-show");
+    warningKm.classList.remove("warning-km-show");
 });

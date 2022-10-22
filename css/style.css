@@ -30,7 +30,6 @@ body {
 }
 .row {
     display: flex;
-    justify-content: space-around;
 }
 h2 {
     color: white;
@@ -59,6 +58,7 @@ input[type=number] {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .col-passenger, .col-distance, .col-age {
+    width: calc(100% / 3);
     padding: 1.875rem 0 3.125rem;
 }
  .my-form .form-container label {
@@ -71,6 +71,14 @@ input[type=number] {
     border: 1px solid #b91450;
     border-radius: 4px;
     padding: .3125rem 0;
+ }
+ .warning-name, .warning-km {
+    opacity: 0;
+    margin-bottom: 0;
+    transition: 0.3s linear;
+ }
+ .warning-name-show, .warning-km-show {
+    opacity: 1;
  }
  .my-form button {
     color: inherit;
@@ -132,8 +140,7 @@ input[type=number] {
     font-weight: bold;
 }
 .shake {
-    transition: 0.4s linear;
-    animation: shake;
+    animation: shake 0.4s linear;
 }
 
 /* -------------------
