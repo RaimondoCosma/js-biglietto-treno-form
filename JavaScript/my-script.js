@@ -33,6 +33,9 @@ triggerBtn.addEventListener('click', function() {
     let trainPrice = myDistance * 0.21;
     const youngCard = 'Biglietto Young';
     const seniorCard = 'Biglietto Senior';
+    const normalCard = `Biglietto Standard`;
+    let cabin = Math.floor(Math.random() * 10 + 1);
+    let cpCode = Math.floor(Math.random() * 10000 + 90000);
     // Mostro il Container dell'output
     show.classList.add("block");
     // Imposto le condizioni di sconto
@@ -41,23 +44,30 @@ triggerBtn.addEventListener('click', function() {
         trainPrice -= trainPrice * 0.2;
         document.querySelector('#card-type').innerHTML = youngCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
+        console.log(`Tipo di offerta: ${youngCard}`)
     } else if (age === 'Senior') {
         document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
         trainPrice -= trainPrice * 0.4;
         document.querySelector('#card-type').innerHTML = seniorCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
+        console.log(`Tipo di offerta: ${seniorCard}`)
+
     } else {
         document.querySelector('#total-price').innerHTML = ``;
-        document.querySelector('#card-type').innerHTML = `Biglietto Standard`;
+        document.querySelector('#card-type').innerHTML = `${normalCard}`;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
+        console.log(`Tipo di offerta: ${normalCard}`)
+
     }
     console.log(`Nome e Cognome passeggero: ${passenger}
     Prezzo del biglietto: ${trainPrice.toFixed(2)}€
-    Fascia d'età passeggero: ${age}`);
+    Fascia d'età passeggero: ${age}
+    Numero Carrozza: ${cabin}
+    Codice CP: ${cpCode}`);
     // Inserisco i dettagli nelle giuste posizioni:
     document.querySelector('#passenger-name').innerHTML = passenger;
-    document.querySelector('#cabin').innerHTML = Math.floor(Math.random() * 10 + 1);
-    document.querySelector('#code').innerHTML = Math.floor(Math.random() * 10000 + 90000);
+    document.querySelector('#cabin').innerHTML = cabin;
+    document.querySelector('#code').innerHTML = cpCode;
 })
 
 // Aggiunge evento di reset al click del bottone Annulla
