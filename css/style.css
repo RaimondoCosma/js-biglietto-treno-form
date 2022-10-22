@@ -86,7 +86,7 @@ input[type=number] {
  }
  .warning-name-show, .warning-km-show {
     opacity: 1;
-    animation: rotation-zoom 0.4s linear;
+    animation: zoom-in 0.4s cubic-bezier(.13,.66,.57,1.67);
  }
  .my-form button {
     color: inherit;
@@ -169,13 +169,13 @@ input[type=number] {
     }
   }
     
-  @keyframes rotation-zoom {
+  @keyframes zoom-in {
     from {
-        transform: scale(0.2) rotate(0);
+        transform: scale(0.1);
         filter: grayscale(1);
     }
     to {
-        transform: scale(1) rotate(360deg);
-        filter: grayscale(1);
+        transform: scale(1);
+        filter: grayscale(0);
     }
 }
