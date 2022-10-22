@@ -67,36 +67,40 @@ input[type=number] {
  .my-form .form-container label {
     display: inline-block;
     color: inherit;
- }
- .my-form input, .my-form select {
+}
+.my-form input, .my-form select {
+background-color: #f6f6f6;
+border: 1px solid #b91450;
+border-radius: 4px;
+padding: .3125rem .1875rem;
+outline: none;
+}
+.my-form input:focus, .my-form select:focus {
     background-color: inherit;
-    border: 1px solid #b91450;
-    border-radius: 4px;
-    padding: .3125rem .1875rem;
- }
- .c-pointer {
-    cursor: pointer;
- }
- .m-bottom {
-    margin-bottom: .9375rem;
- }
- .warning-name, .warning-km {
-    opacity: 0;
-    transition: 0.3s linear;
- }
- .warning-name-show, .warning-km-show {
-    opacity: 1;
-    animation: zoom-in 0.4s cubic-bezier(.13,.66,.57,1.67);
- }
- .my-form button {
-    color: inherit;
-    font-weight: bold;
-    padding: .3125rem;
-    margin: 0 .625rem 1.25rem;
- }
- .my-form button:active {
-    font-size: .75rem;
- }
+}
+.c-pointer {
+cursor: pointer;
+}
+.m-bottom {
+margin-bottom: .9375rem;
+}
+.warning-name, .warning-km {
+opacity: 0;
+transition: 0.3s linear;
+}
+.warning-name-show, .warning-km-show {
+opacity: 1;
+animation: zoom-in 0.4s cubic-bezier(.13,.66,.57,1.67);
+}
+.my-form button {
+color: inherit;
+font-weight: bold;
+padding: .3125rem;
+margin: 0 .625rem 1.25rem;
+}
+.my-form button:active {
+font-size: .75rem;
+}
 #btn-trigger {
     border: 2px solid #e08f47;
     border-radius: .25rem;
