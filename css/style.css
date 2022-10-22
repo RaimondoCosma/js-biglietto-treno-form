@@ -62,12 +62,11 @@ input[type=number] {
 }
 .col-passenger, .col-distance, .col-age {
     width: calc(100% / 3);
-    padding: 1.875rem 0 3.125rem;
+    padding: 1.875rem 0;
 }
  .my-form .form-container label {
     display: inline-block;
     color: inherit;
-    margin-bottom: .9375rem;
  }
  .my-form input, .my-form select {
     background-color: inherit;
@@ -78,13 +77,16 @@ input[type=number] {
  .c-pointer {
     cursor: pointer;
  }
+ .m-bottom {
+    margin-bottom: .9375rem;
+ }
  .warning-name, .warning-km {
     opacity: 0;
-    margin-bottom: 0;
     transition: 0.3s linear;
  }
  .warning-name-show, .warning-km-show {
     opacity: 1;
+    animation: rotation-zoom 0.4s linear;
  }
  .my-form button {
     color: inherit;
@@ -167,3 +169,13 @@ input[type=number] {
     }
   }
     
+  @keyframes rotation-zoom {
+    from {
+        transform: scale(0.2) rotate(0);
+        filter: grayscale(1);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+        filter: grayscale(1);
+    }
+}
