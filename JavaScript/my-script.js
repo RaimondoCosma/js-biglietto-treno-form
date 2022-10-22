@@ -24,11 +24,17 @@ const hide = document.querySelector('#hide');
 // Aggiungo tutti gli eventi al click del bottone
 triggerBtn.addEventListener('click', function() {
     const passenger = document.getElementById('passenger').value;
+    const passengerInput = document.querySelector('.input');
+    if (!(isNaN(passenger)) || (passenger === "")) {
+        passengerInput.classList.toggle("shake");
+        alert("Inserisci nome e cognome");
+        return triggerBtn;
+    };
     const myDistance = document.getElementById('km').value;
-    if (isNaN(myDistance)) {
-        alert(`Attenzione! Inserire un numero corretto. La pagina verra riavviata!`);
-        window.location.reload();
-    }
+    if ((isNaN(myDistance)) || (myDistance <= 0 || myDistance > 10000)) {
+        alert("Attenzione inserire un numero compreso tra 1 e 10000!");
+        return triggerBtn;
+    };
     const age = document.getElementById('age').value;
     let trainPrice = myDistance * 0.21;
     const youngCard = 'Biglietto Young';
