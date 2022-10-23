@@ -25,6 +25,9 @@ const warningKm = document.querySelector('.warning-km');
 
 // Aggiungo tutti gli eventi al click del bottone
 triggerBtn.addEventListener('click', function() {
+    // Effetto sonoro alla comparsa dell'output
+    let whoosh = new Audio('../audio/Whoosh.mp3');
+    whoosh.volume = 0.3;
     // Script relativo al nome passeggero
     const passenger = document.getElementById('passenger').value;
     const passengerName = document.getElementById('input-name');
@@ -55,6 +58,10 @@ triggerBtn.addEventListener('click', function() {
     } else {
         warningKm.classList.remove("warning-km-show");
     };
+    // Mostro il Container dell'output
+    show.classList.add("block");
+    // Imposto le condizioni di sconto
+    whoosh.play();
     // Script relativo alle variabili età, prezzo, offerta, cabina e cp code
     const age = document.getElementById('age').value;
     let trainPrice = myDistance * 0.21;
@@ -63,21 +70,18 @@ triggerBtn.addEventListener('click', function() {
     const normalCard = `Biglietto Standard`;
     let cabin = Math.floor(Math.random() * 10 + 1);
     let cpCode = Math.floor(Math.random() * 10000 + 90000);
-    // Mostro il Container dell'output
-    show.classList.add("block");
-    // Imposto le condizioni di sconto
     if (age === 'Minorenne') {
         document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
         trainPrice -= trainPrice * 0.2;
         document.querySelector('#card-type').innerHTML = youngCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
-        console.log(`Tipo di offerta: ${youngCard}`)
+        console.log(`Tipo di offerta: ${youngCard} 20% di sconto`)
     } else if (age === 'Over 65') {
         document.querySelector('#total-price').innerHTML = `${trainPrice.toFixed(2)}€`;
         trainPrice -= trainPrice * 0.4;
         document.querySelector('#card-type').innerHTML = seniorCard;
         document.querySelector('#price').innerHTML = `${trainPrice.toFixed(2)}€`;
-        console.log(`Tipo di offerta: ${seniorCard}`)
+        console.log(`Tipo di offerta: ${seniorCard} 40% di sconto`)
 
     } else {
         document.querySelector('#total-price').innerHTML = ``;
@@ -99,8 +103,11 @@ triggerBtn.addEventListener('click', function() {
 
 // Aggiungo evento di reset al click sul bottone Annulla
 hide.addEventListener('click', function() {
+    let whoosh2 = new Audio('../audio/Whoosh-2.mp3');
+    whoosh2.volume = 0.3;
     // Nascondo il biglietto al click
     show.classList.remove("block");
+    whoosh2.play();
     // Rimuovo eventuali warning
     warning.classList.remove("warning-name-show");
     warningKm.classList.remove("warning-km-show");

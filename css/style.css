@@ -74,6 +74,7 @@ border: 1px solid #b91450;
 border-radius: 4px;
 padding: .3125rem .1875rem;
 outline: none;
+width: 70%;
 }
 .my-form input:focus, .my-form select:focus {
     background-color: inherit;
