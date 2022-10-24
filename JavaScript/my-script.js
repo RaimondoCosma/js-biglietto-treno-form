@@ -44,7 +44,7 @@ triggerBtn.addEventListener('click', function() {
         warning.classList.remove("warning-name-show");
     };
     // Script relativo ai Km passeggero
-    const myDistance = document.getElementById('km').value;
+    const myDistance = Number(document.getElementById('km').value);
     const passengerKm = document.getElementById('input-km');
     // Imposto le condizioni di input
     if ((isNaN(myDistance)) || (myDistance <= 0 || myDistance > 10000)) {
